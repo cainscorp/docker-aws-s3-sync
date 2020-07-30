@@ -2,7 +2,7 @@
 
 set -e
 
-echo "$(date) - Start"
+echo "$(date) Start"
 
 if [[ "$1" == 'down' ]]; then
   aws s3 sync s3://$BUCKET$BUCKET_PATH /data $PARAMS
