@@ -6,6 +6,7 @@ echo "$(date) Start"
 
 if [[ "$1" == 'down' ]]; then
   aws s3 sync s3://$BUCKET$BUCKET_PATH /data $PARAMS
+  aws s3 rm s3://$BUCKET$BUCKET_PATH --recursive
 else
   aws s3 sync /data s3://$BUCKET$BUCKET_PATH $PARAMS
 fi
